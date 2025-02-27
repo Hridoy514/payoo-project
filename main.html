@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <section class="max-w-md min-h-screen mx-auto py-6 bg-gray-200">
+      <header>
+        <!-- navbar section develop -->
+        <nav class="flex justify-around items-center">
+          <img class="w-16" src="./assets/Group.png" alt="" />
+          <div>
+            <h1 class="text-3xl font-bold">
+              $ <span id="main-balance">4500</span>
+            </h1>
+            <p class="border rounded p-1">available balance</p>
+          </div>
+          <button class="btn">logout</button>
+          <hr />
+        </nav>
+        <main class="mt-10">
+          <!-- Dashboard section -->
+          <section class="dashboard">
+            <h1 class="text-2xl font-bold mb-2 ml-3">Welcome to Payooo!</h1>
+            <p class="ml-3">
+              Enjoy easy and convenient financial services with us. Cashout
+              charge is low and
+            </p>
+
+            <div class="cards grid grid-cols-3 mt-14 gap-2 p-2">
+              <div
+                id="add-money-box"
+                class="box cursor-pointer border border-gray-400 p-4 text-center rounded-md hover:bg-green-200 bg-white"
+              >
+                <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="" />
+                <h3>Add Money</h3>
+              </div>
+              <div
+                id="cashout-box"
+                class="box cursor-pointer border border-gray-400 p-4 text-center rounded-md hover:bg-green-200 bg-white"
+              >
+                <img class="w-8 mx-auto" src="./assets/purse1.png" alt="" />
+                <h3>Cash out</h3>
+              </div>
+              <div id="pay-bill-box"
+                class="box cursor-pointer border border-gray-400 p-4 text-center rounded-md hover:bg-green-200 bg-white"
+              >
+                <img class="w-8 mx-auto" src="./assets/money1.png" alt="" />
+                <h3>Pay Bill</h3>
+              </div>
+              <div id="transfer-money-box"
+                class="box cursor-pointer border border-gray-400 p-4 text-center rounded-md hover:bg-green-200 bg-white"
+              >
+                <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="" />
+                <h3>Transfer money</h3>
+              </div>
+              <div id="get-bonus-box"
+                class="box cursor-pointer border border-gray-400 p-4 text-center rounded-md hover:bg-green-200 bg-white"
+              >
+                <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="" />
+                <h3>Get Bonus</h3>
+              </div>
+              <div id="history-box"
+                class="box cursor-pointer border border-gray-400 p-4 text-center rounded-md hover:bg-green-200 bg-white"
+              >
+                <img class="w-8 mx-auto" src="./assets/wallet1.png" alt="" />
+                <h3>Transaction history</h3>
+              </div>
+            </div>
+          </section>
+          <!-- add money section -->
+          <section id="addmoney-section" class="">
+            <h2 class="font-bold text-xl p-3">Add money</h2>
+            <div class="">
+              <div class="hero-content flex-col lg:flex-row-reverse">
+                <div class="card w-full max-w-sm shrink-0 shadow-2xl">
+                  <div class="card-body bg-white rounded-md">
+                    <legend>Select Bank</legend>
+                    <select class="select bg-gray-200 w-full">
+                      <option class="bg-white" disabled selected>
+                        Select bank
+                      </option>
+                      <option class="bg-white" value="Bkash">Bkash</option>
+                      <option class="bg-white" value="Nagad">Nagad</option>
+                      <option class="bg-white" value="dbbl">DBBL</option>
+                    </select>
+                    <fieldset class="fieldset">
+                      <label class="fieldset-label">Acount number</label>
+                      <input
+                        value="01301301302"
+                        id="Acount-nunber"
+                        type="number"
+                        maxlength="11"
+                        class="input bg-gray-200 w-full"
+                        placeholder="type your  number"
+                        required
+                      />
+                      <br />
+                      <label class="fieldset-label">Amount </label> <br />
+                      <input
+                        id="add-money-amount"
+                        type="number"
+                        maxlength="11"
+                        class="input bg-gray-200 w-full"
+                        placeholder="type your  Amount"
+                        required
+                      />
+                      <br />
+                      <label class="fieldset-label">PIN</label> <br />
+                      <input
+                        value="1234"
+                        id="pin"
+                        type="text"
+                        class="input bg-gray-200 w-full"
+                        placeholder="type your PIN"
+                        required
+                      />
+                      <br />
+                      <div><a class="link link-hover">Forgot password?</a></div>
+                      <button
+                        id="add-money-btn"
+                        type="submit"
+                        class="btn btn-neutral bg-blue-700 mt-4 w-full"
+                      >
+                        Add Money
+                      </button>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- cash out section -->
+          <section id="cashout-section">
+            <h2 class="font-bold text-xl p-3">Cash out</h2>
+            <div class="flex justify-center items-center mt-5">
+              <fieldset
+                class="fieldset bg-white card w-full max-w-sm shrink-0 shadow-2xl p-5"
+              >
+                <label class="fieldset-label">Agent Number</label>
+                <input
+                  value="01301301302"
+                  id="Acount-nunber"
+                  type="number"
+                  maxlength="11"
+                  class="input bg-gray-200"
+                  placeholder="type your  number"
+                  required
+                />
+                <br />
+                <label class="fieldset-label">Amount </label>
+                <input
+                  id="cashout-amount"
+                  type="number"
+                  maxlength="11"
+                  class="input bg-gray-200"
+                  placeholder="type your  Amount"
+                  required
+                />
+                <br />
+                <label class="fieldset-label">PIN</label>
+                <input
+                  value="1234"
+                  id="chashout-pin"
+                  type="text"
+                  class="input bg-gray-200"
+                  placeholder="type your PIN"
+                  required
+                />
+                <br />
+                <button
+                  id="cashout-btn"
+                  type="submit"
+                  id="login-btn"
+                  class="btn btn-neutral bg-blue-700 mt-4"
+                >
+                  Withdraw Money
+                </button>
+              </fieldset>
+            </div>
+          </section>
+          <!-- Transfer money -->
+          <section id="transfer-money-section">
+            <h2 class="font-bold text-xl p-3">Transfer Money</h2>
+            <div class="flex justify-center items-center mt-5">
+              <fieldset
+                class="fieldset bg-white card w-full max-w-sm shrink-0 shadow-2xl p-5"
+              >
+                <label class="fieldset-label">User Account Number</label>
+                <input
+                  value="01301301302"
+                  id="Acount-nunber"
+                  type="number"
+                  maxlength="11"
+                  class="input bg-gray-200"
+                  placeholder="type your  number"
+                  required
+                />
+                <br />
+                <label class="fieldset-label">Amount </label>
+                <input
+                  id="cashout-amount"
+                  type="number"
+                  maxlength="11"
+                  class="input bg-gray-200"
+                  placeholder="type your  Amount"
+                  required
+                />
+                <br />
+                <label class="fieldset-label">PIN</label>
+                <input
+                  value="1234"
+                  id="chashout-pin"
+                  type="text"
+                  class="input bg-gray-200"
+                  placeholder="type your PIN"
+                  required
+                />
+                <br />
+                <button
+                  id="cashout-btn"
+                  type="submit"
+                  id="login-btn"
+                  class="btn btn-neutral bg-blue-700 mt-4"
+                >
+                  Send Money
+                </button>
+              </fieldset>
+            </div>
+          </section>
+          <!-- Get bonus section -->
+          <section id="get-bonus-section">
+            <h2 class="font-bold text-xl p-3">Get Bonus</h2>
+            <div class="flex justify-center items-center mt-5">
+              <fieldset
+                class="fieldset bg-white card w-full max-w-sm shrink-0 shadow-2xl p-5"
+              >
+                <label class="fieldset-label mb-2">Cupon </label>
+                <input
+                  id="cashout-amount"
+                  type="number"
+                  maxlength="11"
+                  class="input bg-gray-200"
+                  placeholder="type your  cupon code"
+                  required
+                />
+                <button
+                  id="cashout-btn"
+                  type="submit"
+                  id="login-btn"
+                  class="btn btn-neutral bg-blue-700 mt-4"
+                >
+                  Get Bonus
+                </button>
+              </fieldset>
+            </div>
+          </section>
+          <!-- Pay bill section -->
+          <section id="pay-bill-section" class="">
+            <h2 class="font-bold text-xl p-3">Pay Bill</h2>
+            <div class="">
+              <div class="hero-content flex-col lg:flex-row-reverse">
+                <div class="card w-full max-w-sm shrink-0 shadow-2xl">
+                  <div class="card-body bg-white rounded-md">
+                    <legend>Select To Pay</legend>
+                    <select class="select bg-gray-200 w-full">
+                      <option class="bg-white" disabled selected>
+                        Select bank
+                      </option>
+                      <option class="bg-white" value="Bkash">Bkash</option>
+                      <option class="bg-white" value="Nagad">Nagad</option>
+                      <option class="bg-white" value="dbbl">DBBL</option>
+                    </select>
+                    <fieldset class="fieldset">
+                      <label class="fieldset-label">Biller Acount number</label>
+                      <input
+                        value="01301301302"
+                        id="Acount-nunber"
+                        type="number"
+                        maxlength="11"
+                        class="input bg-gray-200 w-full"
+                        placeholder="type your  number"
+                        required
+                      />
+                      <br />
+                      <label class="fieldset-label">Amount To Pay</label> <br />
+                      <input
+                        id="amount"
+                        type="number"
+                        maxlength="11"
+                        class="input bg-gray-200 w-full"
+                        placeholder="type your  Amount"
+                        required
+                      />
+                      <br />
+                      <label class="fieldset-label">PIN Number</label> <br />
+                      <input
+                        value="1234"
+                        id="pin"
+                        type="text"
+                        class="input bg-gray-200 w-full"
+                        placeholder="type your PIN"
+                        required
+                      />
+                      <br />
+                      <button
+                        id="add-money"
+                        type="submit"
+                        id="login-btn"
+                        class="btn btn-neutral bg-blue-700 mt-4 w-full"
+                      >
+                        Pay Now
+                      </button>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Transaction History -->
+          <section id="transaction-history-section">
+            <div class="flex justify-between items-center">
+              <h2 class="font-bold text-xl ml-3">Transaction</h2>
+              <p class="mr-3 text-gray-500 cursor-pointer">View All</p>
+            </div>
+            <div class="flex flex-col justify-center items-center mt-5 gap-3">
+              <div class="bg-white card w-full max-w-sm p-5">
+                <div class="flex justify-between items-center">
+                  <div class="flex justify-start items-center gap-3">
+                    <img src="./assets/purse1.png" alt="" />
+                    <div>
+                      <h4 class="font-semibold">Electricity Bill</h4>
+                      <p class="text-xs">Today 10.45 AM</p>
+                    </div>
+                  </div>
+                  <div>
+                    <i class="bx bx-dots-vertical-rounded text-xl"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white card w-full max-w-sm p-5">
+                <div class="flex justify-between items-center">
+                  <div class="flex justify-start items-center gap-3">
+                    <img src="./assets/purse1.png" alt="" />
+                    <div>
+                      <h4 class="font-semibold">Cash Out</h4>
+                      <p class="text-xs">Today 10.45 AM</p>
+                    </div>
+                  </div>
+                  <div>
+                    <i class="bx bx-dots-vertical-rounded text-xl"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white card w-full max-w-sm p-5">
+                <div class="flex justify-between items-center">
+                  <div class="flex justify-start items-center gap-3">
+                    <img src="./assets/purse1.png" alt="" />
+                    <div>
+                      <h4 class="font-semibold">Send Money</h4>
+                      <p class="text-xs">Today 10.45 AM</p>
+                    </div>
+                  </div>
+                  <div>
+                    <i class="bx bx-dots-vertical-rounded text-xl"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white card w-full max-w-sm p-5">
+                <div class="flex justify-between items-center">
+                  <div class="flex justify-start items-center gap-3">
+                    <img src="./assets/purse1.png" alt="" />
+                    <div>
+                      <h4 class="font-semibold">Bank Deposit</h4>
+                      <p class="text-xs">Today 10.45 AM</p>
+                    </div>
+                  </div>
+                  <div>
+                    <i class="bx bx-dots-vertical-rounded text-xl"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white card w-full max-w-sm p-5">
+                <div class="flex justify-between items-center">
+                  <div class="flex justify-start items-center gap-3">
+                    <img src="./assets/purse1.png" alt="" />
+                    <div>
+                      <h4 class="font-semibold">Mobile Recharge</h4>
+                      <p class="text-xs">Today 10.45 AM</p>
+                    </div>
+                  </div>
+                  <div>
+                    <i class="bx bx-dots-vertical-rounded text-xl"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white card w-full max-w-sm p-5">
+                <div class="flex justify-between items-center">
+                  <div class="flex justify-start items-center gap-3">
+                    <img src="./assets/purse1.png" alt="" />
+                    <div>
+                      <h4 class="font-semibold">Gas Bill</h4>
+                      <p class="text-xs">Today 10.45 AM</p>
+                    </div>
+                  </div>
+                  <div>
+                    <i class="bx bx-dots-vertical-rounded text-xl"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Latest Pay -->
+          <section id="latest-pay">
+            <div class="flex justify-between items-center mt-7">
+              <h2 class="font-bold text-xl ml-3">Latest Pay</h2>
+              <p class="mr-3 text-gray-500 cursor-pointer">View All</p>
+            </div>
+            <div class="flex flex-col justify-center items-center mt-5 gap-3">
+              <div class="bg-white card w-full max-w-sm p-5">
+                <div class="flex justify-between items-center">
+                  <div class="flex justify-start items-center gap-3">
+                    <img src="./assets/purse1.png" alt="" />
+                    <div>
+                      <h4 class="font-semibold">Electricity Bill</h4>
+                      <p class="text-xs">Today 10.45 AM</p>
+                    </div>
+                  </div>
+                  <div>
+                    <i class="bx bx-dots-vertical-rounded text-xl"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white card w-full max-w-sm p-5">
+                <div class="flex justify-between items-center">
+                  <div class="flex justify-start items-center gap-3">
+                    <img src="./assets/purse1.png" alt="" />
+                    <div>
+                      <h4 class="font-semibold">Cash Out</h4>
+                      <p class="text-xs">Today 10.45 AM</p>
+                    </div>
+                  </div>
+                  <div>
+                    <i class="bx bx-dots-vertical-rounded text-xl"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white card w-full max-w-sm p-5">
+                <div class="flex justify-between items-center">
+                  <div class="flex justify-start items-center gap-3">
+                    <img src="./assets/purse1.png" alt="" />
+                    <div>
+                      <h4 class="font-semibold">Send Money</h4>
+                      <p class="text-xs">Today 10.45 AM</p>
+                    </div>
+                  </div>
+                  <div>
+                    <i class="bx bx-dots-vertical-rounded text-xl"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white card w-full max-w-sm p-5">
+                <div class="flex justify-between items-center">
+                  <div class="flex justify-start items-center gap-3">
+                    <img src="./assets/purse1.png" alt="" />
+                    <div>
+                      <h4 class="font-semibold">Bank Deposit</h4>
+                      <p class="text-xs">Today 10.45 AM</p>
+                    </div>
+                  </div>
+                  <div>
+                    <i class="bx bx-dots-vertical-rounded text-xl"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white card w-full max-w-sm p-5">
+                <div class="flex justify-between items-center">
+                  <div class="flex justify-start items-center gap-3">
+                    <img src="./assets/purse1.png" alt="" />
+                    <div>
+                      <h4 class="font-semibold">Mobile Recharge</h4>
+                      <p class="text-xs">Today 10.45 AM</p>
+                    </div>
+                  </div>
+                  <div>
+                    <i class="bx bx-dots-vertical-rounded text-xl"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white card w-full max-w-sm p-5">
+                <div class="flex justify-between items-center">
+                  <div class="flex justify-start items-center gap-3">
+                    <img src="./assets/purse1.png" alt="" />
+                    <div>
+                      <h4 class="font-semibold">Gas Bill</h4>
+                      <p class="text-xs">Today 10.45 AM</p>
+                    </div>
+                  </div>
+                  <div>
+                    <i class="bx bx-dots-vertical-rounded text-xl"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </header>
+    </section>
+
+    <script src="./script/toggle.js"></script>
+    <script src="./script/addMoney.js"></script>
+    <script src="script/main.js"></script>
+  </body>
+</html>
