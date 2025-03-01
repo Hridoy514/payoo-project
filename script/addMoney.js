@@ -20,5 +20,4 @@ document
     } else {
       alert("Enter a valid number");
       }
-      
   });
